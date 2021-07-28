@@ -1,17 +1,18 @@
-<h2>Rectangle Creator</h2>
-<p>Count: <input id="count" value="5"></p>
-<button id="create">Create</button>
-<button id="cancel">Cancel</button>
+<!-- <h2>Figsplosion</h2> -->
+<p>Figsplosion will "blow up" elements in your viewport. To explode more, zoom out. To explode less, zoom in. Have fun! 💥</p>
+<!-- <p>Count: <input id="count" value="5"></p> -->
+<button id="undo">Undo</button>
+<button id="explode">Explode</button>
 <script>
 
-document.getElementById('create').onclick = () => {
-  const textbox = document.getElementById('count');
-  const count = parseInt(textbox.value, 10);
-  parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*')
+document.getElementById('explode').onclick = () => {
+  // const textbox = document.getElementById('count');
+  // const count = parseInt(textbox.value, 10);
+  parent.postMessage({ pluginMessage: { type: 'explode'} }, '*')
 }
 
-document.getElementById('cancel').onclick = () => {
-  parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
+document.getElementById('undo').onclick = () => {
+  parent.postMessage({ pluginMessage: { type: 'undo' } }, '*')
 }
 
 </script>
